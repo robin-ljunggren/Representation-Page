@@ -1,0 +1,81 @@
+.lock-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.glassmorphism {
+  width: 99%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: transparentize 0.5s linear forwards;
+}
+@keyframes transparentize {
+  from {
+  }
+  to {
+    background: rgba(230, 230, 230, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+}
+.lock-icon {
+  width: 22px;
+  margin-top: 3em;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.lock-screen-clock {
+  margin-top: 7em;
+  display: flex;
+  flex-direction: column;
+}
+.hour,
+.minute {
+  font-size: 5rem;
+}
+.lock-screen-date,
+.hour,
+.minute,
+.emergency-call {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+.swipe-to-unlock {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(231, 231, 231, 0.658);
+  font-size: 0.7rem;
+  margin-top: 40em;
+}
+.phone-and-camera {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.phone-icon,
+.camera-icon {
+  margin-top: 0.2em;
+  width: 35px;
+}
+.emergency-call {
+  display: inline;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  background-color: rgba(238, 238, 238, 0.199);
+  font-size: 0.9rem;
+  margin-top: 46.7em;
+  margin-right: 0.2em;
+}
+.back-arrow {
+  width: 9px;
+  margin-top: 4em;
+  align-self: flex-start;
+  margin-left: 5em;
+}
