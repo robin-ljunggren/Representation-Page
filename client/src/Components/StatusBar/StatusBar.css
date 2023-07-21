@@ -1,0 +1,43 @@
+.status-bar {
+  height: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.operator {
+  color: white;
+  margin-left: 1em;
+  margin-top: 0.3em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.images-container {
+  display: flex;
+  margin-top: 0.4em;
+  margin-right: 0.9em;
+}
+.images-container img {
+  margin-right: 0.2em;
+}
+.power-saving-mode,
+.battery-logo {
+  width: 10px;
+  height: 13px;
+}
+.alarm-clock {
+  width: 13px;
+  height: 13px;
+}
+.wifi-signal,
+.five-g {
+  width: 17px;
+  height: 13px;
+}
+.signal-status {
+  width: 13px;
+  height: 13px;
+}
+.battery-status {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: -0.1em;
+  margin-right: 0.2em;
+}
