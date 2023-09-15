@@ -85,7 +85,9 @@ export default function PinPad(props) {
         setPinCode([]);
         setSecretVal([]);
         btnsClassRef.current = "";
-        
+        props.setOpaqueScreen(true);
+        props.setLocked(false);
+
       }else {
         setPinSecretClass('wrong-pin');
         setDisabled(true);

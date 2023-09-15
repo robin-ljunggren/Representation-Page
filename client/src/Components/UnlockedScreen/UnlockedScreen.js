@@ -1,17 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './UnlockedScreen.css';
 
 export default function UnlockedScreen() {
 
-  const [unlocked, setUnlocked] = useState();
-
   return(
-    <>
-     {unlocked && (
       <section>
-        <img />
+        <p>Unlocked</p>
       </section>
-      )}
-    </>
   )
 }

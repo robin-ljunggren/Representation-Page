@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
-import './LockScreen.css';
-import LockIcon from '../../img/lock-icon.png';
+import React from 'react'
 import PhoneIcon from '../../img/lock-screen-phone.png';
+import LockIcon from '../../img/lock-icon.png';
 import CameraIcon from '../../img/lock-screen-camera.png';
-import BackArrow from '../../img/back-arrow.png';
 import GetLocale from '../../Services/GetLocale.js';
-import PinPad from '../PinPad/PinPad';
+import './LockedScreen.css';
 
 
-export default function LockScreen(props) {
-
-  const [opaqueScreen, setOpaqueScreen] = useState(true);
+export default function LockedScreen(props) {
 
   let clientYStart;
   let clientYEnd;
@@ -18,7 +14,7 @@ export default function LockScreen(props) {
   let localeTime = GetLocale.getLocaleTime();
   let localeDate = GetLocale.getLocaleDate();
   let localeLangCode = GetLocale.getLocaleLang();
- 
+
   function handleTouchStart(e) {
     clientYStart = e.touches[0].clientY;
   }
@@ -26,7 +22,7 @@ export default function LockScreen(props) {
     clientYEnd = e.changedTouches[0].clientY;
 
     if(clientYStart !== clientYEnd){
-      setOpaqueScreen(false);
+      props.setOpaqueScreen(false);
       props.lockedState.setLockedState(false);
     }
   }
@@ -37,15 +33,13 @@ export default function LockScreen(props) {
   function handleOnMouseUp(e) {
     clientYEnd = e.clientY;
     if(clientYStart !== clientYEnd){
-      setOpaqueScreen(false);
+      props.setOpaqueScreen(false);
       props.lockedState.setLockedState(false);
     }
   }
-  
+
   return (
-    <>
-      {opaqueScreen && (
-        <section className="lock-screen" 
+    <section className="lock-screen" 
           onTouchStart={handleTouchStart} 
           onTouchEnd={handleTouchEnd} 
           onMouseDown={handleOnMouseDown} 
@@ -63,15 +57,5 @@ export default function LockScreen(props) {
             <img className='camera-icon' alt="camera icon" src={CameraIcon}/>
           </div>
         </section>
-      )}
-      {!opaqueScreen && (
-        <div className='glassmorphism'>
-          <img className='lock-icon' alt="lock icon" src={LockIcon} />
-          <PinPad />
-          <p className='emergency-call'>{localeLangCode === "sv-SE" ? "Nödsamtal" : "Emergency call"}</p>
-          <img className='back-arrow' alt="back arrow icon" src={BackArrow} />
-        </div>
-      )}
-    </>
   )
 }

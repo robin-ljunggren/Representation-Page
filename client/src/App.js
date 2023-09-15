@@ -1,28 +1,28 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
 import StatusBar from './Components/StatusBar/StatusBar.js';
-import LockScreen from './Components/LockScreen/LockScreen.js';
+import Screen from './Components/Screen/Screen.js';
 
 function App() {
 
-  const lockedRef = useRef(false);
-  const [lockedState, setLockedState] = useState(false);
+  const turnedOnRef = useRef(false);
+  const [turnedOn, setTurnedOn] = useState(false);
 
-  if((!lockedRef.current && !lockedState)) {
+  if((!turnedOnRef.current && !turnedOn)) {
     setTimeout(() => {
-      lockedRef.current = true;
-      setLockedState(true);
+      turnedOnRef.current = true;
+      setTurnedOn(true);
     }, 5500);
   }
 
   return (
     <>
-      {(lockedRef.current && lockedState) && (
+      {(turnedOnRef.current && turnedOn) && (
         <div>
-          <StatusBar lockedState={lockedState}/>
+          <StatusBar />
         </div>
       )}
-      {lockedRef.current && (<LockScreen lockedState={{lockedState, setLockedState}} />)}  
+      {turnedOnRef.current && (<Screen turnedOn={{turnedOn, setTurnedOn}} />)}  
     </>
   );
 }

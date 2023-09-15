@@ -17,6 +17,11 @@
 .images-container img {
   margin-right: 0.2em;
 }
+.chat-icon {
+  width: 14px;
+  height: 14px;
+  transform: translateX(-6em);  
+}
 .power-saving-mode,
 .battery-logo {
   width: 10px;

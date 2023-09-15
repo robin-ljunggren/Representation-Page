@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import './StatusBar.css';
 import { extractUserAgent } from '../../Services/UserAgent.js';
+import chatIcon from '../../img/chat-icon.png';
 import powerSavingMode from '../../img/power-saving-mode.png';
 import alarmClock from '../../img/alarm-clock-logo.png';
 import FourBarsWifi from '../../img/4bar-wifi.png';
@@ -51,6 +52,7 @@ export default function StatusBar(props) {
       <aside className="status-bar">
         <p className="operator">{operator}</p>
         <div className='images-container'>
+          <img className='chat-icon' alt="chatbubble" src={chatIcon}/>
           <img className='power-saving-mode' alt="power saving mode" src={powerSavingMode}/>
           <img className='alarm-clock' alt="alarm clock" src={alarmClock}/>
           <img className='wifi-signal' alt="wifi signal" src={wifiImgSrcState}/>
