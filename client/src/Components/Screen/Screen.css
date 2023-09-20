@@ -1,6 +1,7 @@
 .glassmorphism {
   width: 99%;
-  height: 100%;
+  height: 100vh;
+  top: 0;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -37,7 +38,7 @@
 }
 .back-arrow {
   width: 9px;
-  margin-top: 4em;
-  align-self: flex-start;
-  margin-left: 5em;
+  margin-top: 4.3em;
+  align-self: flex-end;
+  margin-right: 4.5em;
 }

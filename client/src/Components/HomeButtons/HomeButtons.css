@@ -1,0 +1,16 @@
+.home-btns-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.prev-apps-btn,
+.home-btn,
+.back-arrow-home {
+  width: 9px;
+  margin-top: 4.3em;
+}
+
+.prev-apps-btn,
+.home-btn {
+  width: 14px;
+}

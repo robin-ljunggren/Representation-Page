@@ -37,8 +37,35 @@ function getLocaleLang(langCode) {
   return langCode;
 }
 
+function getLocaleGeo(localeGeo) {
+
+  const options = {
+    enableHighAccracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  }
+
+  function success(pos) {
+    const coords = pos.coords;
+
+    const position = {
+      lat: coords.latitude,
+      lon: coords.longitude,
+      acc: coords.accuracy,
+    }
+    
+  }
+
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+
+  localeGeo = navigator.geolocation.getCurrentPosition(success, error, options);
+
+  return localeGeo;
+}
 
 
-const GetLocale = { getLocaleTime, getLocaleDate, getLocaleLang };
+const GetLocale = { getLocaleTime, getLocaleDate, getLocaleLang, getLocaleGeo };
 
 export default GetLocale;

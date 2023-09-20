@@ -18,10 +18,10 @@ function shiftSrc(prevRandomNum, setImgSrcState) {
   const sources = [FourBarsWifi, ThreeBarsWifi, TwoBarsWifi];
   const randomNum = Math.floor(Math.random() * 3);
     
-  if(randomNum !== prevRandomNum.current) {
+  if(randomNum !== prevRandomNum) {
 
     setImgSrcState(sources[randomNum]);
-    prevRandomNum.current = randomNum;
+    prevRandomNum = randomNum;
     
   }else {
     shiftSrc();

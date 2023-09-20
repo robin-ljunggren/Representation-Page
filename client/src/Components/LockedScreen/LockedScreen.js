@@ -23,7 +23,6 @@ export default function LockedScreen(props) {
 
     if(clientYStart !== clientYEnd){
       props.setOpaqueScreen(false);
-      props.lockedState.setLockedState(false);
     }
   }
   
@@ -34,7 +33,6 @@ export default function LockedScreen(props) {
     clientYEnd = e.clientY;
     if(clientYStart !== clientYEnd){
       props.setOpaqueScreen(false);
-      props.lockedState.setLockedState(false);
     }
   }
 

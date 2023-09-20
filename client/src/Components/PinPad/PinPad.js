@@ -131,7 +131,7 @@ export default function PinPad(props) {
     setHideValue(false);
     setTimeout(() => {
       setHideValue(true);
-      setSecretVal([...secretVal, <span className='secret-val'></span>])
+      setSecretVal([...secretVal, <span className='secret-val' key={secretVal}></span>])
     }, 350);
   }
 
