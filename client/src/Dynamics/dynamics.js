@@ -12,8 +12,19 @@ import twentyBattery from '../img/20%-battery.png';
 import tenBattery from '../img/10%-battery.png';
 import twoBattery from '../img/2%-battery.png';
 
+import Sunny from '../img/weather-sunny.png';
+import SunnyCloudy from '../img/weather-sunny_cloudy.png';
+import SunnyRainy from '../img/weather-sunny_rainy.png';
+import Rainy from '../img/weather-rainy.png';
+import Cloudy from '../img/weather-cloudy.png';
+import Snowy from '../img/weather-snowy.png';
+import Thunder from '../img/weather-thunder.png';
+import Misty from '../img/weather-misty.png';
 
-function shiftSrc(prevRandomNum, setImgSrcState) {
+import weatherService from '../Services/WeatherService';
+
+
+function shiftImgSrc(prevRandomNum, setImgSrcState) {
 
   const sources = [FourBarsWifi, ThreeBarsWifi, TwoBarsWifi];
   const randomNum = Math.floor(Math.random() * 3);
@@ -24,7 +35,7 @@ function shiftSrc(prevRandomNum, setImgSrcState) {
     prevRandomNum = randomNum;
     
   }else {
-    shiftSrc();
+    shiftImgSrc();
   } 
 }
 
@@ -88,7 +99,31 @@ function drainBattery(setBatteryStatus, batteryStatus, setBatteryImgSrcState) {
     setBatteryImgSrcState(twoBattery);
     setBatteryStatus(batteryStatus -1);
   }
-} 
+}
 
-const dynamics = {shiftSrc, drainBattery};
+async function changeWeatherImg(setWeatherImg) {
+  const currentWeather = await weatherService.fetchWeather();
+  
+  if(currentWeather.weatherId >= 200 && currentWeather.weatherId <= 232) {
+    setWeatherImg(Thunder) 
+  }else if(currentWeather.weatherId >= 300 && currentWeather.weatherId <= 321) {
+    setWeatherImg(SunnyRainy) 
+  }else if(currentWeather.weatherId >= 500 && currentWeather.weatherId <= 531) {
+    setWeatherImg(Rainy) 
+  }else if(currentWeather.weatherId >= 600 && currentWeather.weatherId <= 622) {
+    setWeatherImg(Snowy) 
+  }else if(currentWeather.weatherId >= 700 && currentWeather.weatherId <= 781) {
+    setWeatherImg(Misty) 
+  }else if(currentWeather.weatherId === 800) {
+    setWeatherImg(Sunny) 
+  }else if(currentWeather.weatherId === 801) {
+    setWeatherImg(SunnyCloudy) 
+  }else if(currentWeather.weatherId >= 802 && currentWeather.weatherId <= 804) {
+    setWeatherImg(Cloudy) 
+  }
+  
+  return currentWeather;
+}
+
+const dynamics = {shiftImgSrc, drainBattery, changeWeatherImg};
 export default dynamics;

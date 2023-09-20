@@ -30,7 +30,7 @@ export default function StatusBar(props) {
 
     setTimeout(() => {
 
-      dynamics.shiftSrc(prevRandomNum.current, setWifiImgSrcState);
+      dynamics.shiftImgSrc(prevRandomNum.current, setWifiImgSrcState);
       console.log("SetTimeout");
     }, randomTime)
   }, [wifiImgSrcState])
