@@ -40,6 +40,20 @@
 }
 .refresh-arrow {
   width: 11px;
-  margin-left: 3.4em;
+  margin-left: 4em;
   margin-top: -0.8em;
+}
+.refresh-arrow-active {
+  width: 11px;
+  margin-left: 4em;
+  margin-top: -0.8em;
+  animation: rotate 2s ease-in infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotateZ(359deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
 }
