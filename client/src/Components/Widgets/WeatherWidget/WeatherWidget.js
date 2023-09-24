@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
-import dynamics from '../../Dynamics/dynamics';
-import Sunny from '../../img/weather-sunny.png';
-import RefreshArrow from '../../img/refresh-arrow.png';
-import './Widgets.css';
-import GetLocale from '../../Services/GetLocale';
+import dynamics from '../../../Dynamics/dynamics';
+import Sunny from '../../../img/weather-sunny.png';
+import RefreshArrow from '../../../img/refresh-arrow.png';
+import './WeatherWidget.css';
+import GetLocale from '../../../Services/GetLocale';
 
 
-export default function Widgets() {
+export default function WeatherWidget() {
   const weather = useRef();
   const [weatherImg, setWeatherImg] = useState(Sunny);
   const [updateWeather, setUpdateWeather] = useState(true);

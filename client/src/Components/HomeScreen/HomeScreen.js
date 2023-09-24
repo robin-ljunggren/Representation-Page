@@ -1,10 +1,12 @@
 import React from 'react'
-import Widgets from '../Widgets/Widgets'
+import WeatherWidget from '../Widgets/WeatherWidget/WeatherWidget.js';
+import CalendarWidget from '../Widgets/CalendarWidget/CalendarWidget.js';
 
 export default function HomeScreen() {
   return (
-    <>
-      <Widgets />
-    </>
+    <div className='home-screen'>
+      <WeatherWidget />
+      <CalendarWidget />
+    </div>
   )
 }
