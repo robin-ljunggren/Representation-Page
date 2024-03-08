@@ -9,7 +9,7 @@ export default function CalendarWidget() {
 
   const month = date.getMonth();
   const year = date.getFullYear();
-  const lastDate = new Date(year, month + 1, 0).getDate();
+  // const lastDate = new Date(year, month + 1, 0).getDate();
 
 
   const sweMonths = ["Januari", "Februari", "Mars", "April", "Maj", "Juni",
