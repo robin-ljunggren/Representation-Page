@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import GetLocale from '../../../Services/GetLocale';
 import './CalendarWidget.css';
 
 export default function CalendarWidget() {
 
-  const isToday = useRef();
+  const [date, setDate] = useState(new Date());
   const [datesOfMonth, setDatesOfMonth] = useState([]);
-  const dates = [];
-  const date = new Date();
+
   const month = date.getMonth();
   const year = date.getFullYear();
   const lastDate = new Date(year, month + 1, 0).getDate();
@@ -19,17 +18,6 @@ export default function CalendarWidget() {
                      "July", "August", "September", "October", "November", "December"];
 
   const localeLangCode = GetLocale.getLocaleLang();
-
-  function getDatesOfMonth() {
-    for(let i = 1; i <= lastDate; i++){
-      dates.push(i);
-    }
-    setDatesOfMonth(dates);
-
-  }
-  useEffect(() => {
-    getDatesOfMonth();
-  }, [])
 
   return (
     <div className='widget-container'>
