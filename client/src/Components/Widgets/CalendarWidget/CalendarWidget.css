@@ -1,0 +1,17 @@
+.widget-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 8em;
+}
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: rgb(67, 67, 67);
+  color: white;
+}
+.calendar-dates {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

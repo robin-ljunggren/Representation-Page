@@ -1,0 +1,44 @@
+.glassmorphism {
+  width: 99%;
+  height: 100vh;
+  top: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: transparentize 0.5s linear forwards;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+@keyframes transparentize {
+  from {
+  }
+  to {
+    background: rgba(230, 230, 230, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+}
+.lock-icon {
+  width: 22px;
+  margin-top: 3em;
+}
+.emergency-call {
+  display: inline;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  background-color: rgba(238, 238, 238, 0.199);
+  font-size: 0.9rem;
+  margin-top: 46.7em;
+  margin-right: 0.2em;
+}
+.back-arrow {
+  width: 9px;
+  margin-top: 4.3em;
+  align-self: flex-end;
+  margin-right: 4.5em;
+}

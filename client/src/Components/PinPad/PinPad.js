@@ -3,6 +3,7 @@ import './PinPad.css';
 import EraseLeft from '../../img/erase-left.png';
 import GetLocale from '../../Services/GetLocale';
 
+
 const ACTIONS = {
   INCREMENT: "increment",
   DECREMENT: "decrement",
@@ -22,7 +23,7 @@ function reducer(state, action) {
   }
 }
 
-export default function PinPad() {
+export default function PinPad(props) {
 
   const [state, dispatch] = useReducer(reducer, { count: 0 });
   const [pinState, setPinState] = useState(false);
@@ -31,6 +32,7 @@ export default function PinPad() {
   const [hideValue, setHideValue] = useState(false);
   const btnsClassRef = useRef();
   const [pinSecretClass, setPinSecretClass] = useState('secret');
+  const [disabled, setDisabled] = useState(false);
 
   let localeLangCode = GetLocale.getLocaleLang();
 
@@ -77,25 +79,27 @@ export default function PinPad() {
     
     }else if(btnValue === "OK"){
 
-
       if(count >= 4) { 
         dispatch({type: ACTIONS.RESET});
         setPinState(false);
         setPinCode([]);
         setSecretVal([]);
         btnsClassRef.current = "";
+        props.setOpaqueScreen(true);
+        props.setLocked(false);
+
       }else {
         setPinSecretClass('wrong-pin');
+        setDisabled(true);
 
         setTimeout(() => {
-          
           setPinSecretClass('secret');
           dispatch({type: ACTIONS.RESET});
           setPinState(false);
           setPinCode([]);
           setSecretVal([]);
           btnsClassRef.current = "";
-
+          setDisabled(false);
         }, 4000);
       }
       
@@ -127,7 +131,7 @@ export default function PinPad() {
     setHideValue(false);
     setTimeout(() => {
       setHideValue(true);
-      setSecretVal([...secretVal, <span className='secret-val'></span>])
+      setSecretVal([...secretVal, <span className='secret-val' key={secretVal}></span>])
     }, 350);
   }
 
@@ -149,7 +153,7 @@ export default function PinPad() {
             <p className='pin-code'>{hideValue ? "" : pinCode}</p>
           </div>
         )}
-        <div className={btnsClassRef.current} >{pinPadProps.map(button => <button key={crypto.randomUUID()} onClick={handleClick}>{button}</button>)}</div>
+        <div className={btnsClassRef.current} >{pinPadProps.map(button => <button key={crypto.randomUUID()} disabled={disabled} onClick={handleClick}>{button}</button>)}</div>
       </form>
     
   )

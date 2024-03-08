@@ -1,0 +1,44 @@
+.lock-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.lock-icon {
+  width: 22px;
+  margin-top: 3em;  
+}
+.lock-screen-clock {
+  margin-top: 7em;
+  display: flex;
+  flex-direction: column;
+}
+.hour,
+.minute {
+  font-size: 5rem;
+}
+.lock-screen-date,
+.hour,
+.minute,
+.emergency-call {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+.swipe-to-unlock {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(231, 231, 231, 0.658);
+  font-size: 0.7rem;
+  margin-top: 40em;
+}
+.phone-icon,
+.camera-icon {
+  margin-top: 0.2em;
+  width: 35px;
+}
+.phone-and-camera {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}

@@ -37,8 +37,35 @@ function getLocaleLang(langCode) {
   return langCode;
 }
 
+async function getLocaleGeo(localeGeo) {
+  let position = await getPosition();
 
+  localeGeo = {
+    lat: position.coords.latitude,
+    lon: position.coords.longitude,
+  }
+  return localeGeo;
+}
 
-const GetLocale = { getLocaleTime, getLocaleDate, getLocaleLang };
+function getPosition() {
+  if(navigator.geolocation) {
+      
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0,
+    };
+
+    function error(err) {
+      alert(`ERROR(${err.code}): ${err.message}`);
+    }
+
+    return new Promise((success) => navigator.geolocation.getCurrentPosition(success, error, options)) 
+  }else {
+    return "Geolocation is not supported in this browser";
+  }
+}
+
+const GetLocale = { getLocaleTime, getLocaleDate, getLocaleLang, getLocaleGeo };
 
 export default GetLocale;
