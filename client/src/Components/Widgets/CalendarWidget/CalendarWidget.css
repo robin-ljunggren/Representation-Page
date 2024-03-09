@@ -5,13 +5,32 @@
 }
 .calendar-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 60%;
-  background-color: rgb(67, 67, 67);
+  background-color: rgb(42, 42, 42);
+  color: white;
+  padding: 1em;
+  border-radius: 1em;
+}
+.calendar-header {
+  font-size: 1.3rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: white;
 }
-.calendar-dates {
+.calendar-columns {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 1.4em;
+  gap: 1.2em;
+  font-size: 0.7rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.calendar-weekdays:nth-child(7n) {
+  color: rgb(190, 57, 57);
+}
+.calendar-cells:nth-child(7n) {
+  color: rgb(190, 57, 57);
+}
+.scheduled-events-container {
+  width: 5em;
 }
