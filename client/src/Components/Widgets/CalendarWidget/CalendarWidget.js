@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import GetLocale from '../../../Services/GetLocale';
 import './CalendarWidget.css';
 
 export default function CalendarWidget() {
   
   const localeLangCode = GetLocale.getLocaleLang();
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const selectedDate = new Date();
 
   const getDaysInMonth = (month, year) => {
     if (month === 1 && ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0)) {
