@@ -38,8 +38,6 @@ export default function CalendarWidget() {
   const weekdays = localeLangCode === 'sv-SE' ? datesOfLanguage.sweDays : datesOfLanguage.engDays;
   const months = localeLangCode === 'sv-SE' ? datesOfLanguage.sweMonths : datesOfLanguage.engMonths;
 
- 
-
   // const handleMonthChange = (offset) => {
   //   const newDate = new Date(selectedDate);
   //   newDate.setMonth(selectedDate.getMonth() + offset);
@@ -50,17 +48,20 @@ export default function CalendarWidget() {
     <div className='widget-container'>
       <div className='calendar-container'>
         <h5 className='calendar-header'>{months[selectedDate.getMonth()]}</h5>
-        <div className="calendar-columns">
-          {weekdays.map((weekday, index) => (
-            <div className="calendar-weekdays" key={index}>{weekday}</div>
-          ))}
-          {blanks.map((_, index) => <div className="calendar-cells_blank" key={index}></div>)}
-          {monthDays.map(date => <div className="calendar-cells" key={date}>{date}</div>)}
-        </div>
-        <div className='scheduled-events-container'>
-          <div className='event-para-container'>
-            <p>No events</p>
-            <p>Enjoy your day!</p>
+        <div className='flex-container'>
+          <div className="grid-container">
+            {weekdays.map((weekday, index) => (
+              <div className="calendar-weekdays" key={index}>{weekday}</div>
+            ))}
+            {blanks.map((_, index) => <div className="calendar-cells_blank" key={index}></div>)}
+            {monthDays.map(date => <div 
+              className={date === selectedDate.getDate() ? "current-date" : "calendar-cells"}
+              key={date}>{date}</div>
+            )}
+          </div>
+          <div className='scheduled-events-container'>
+            <p className='events-para-one'>No events</p>
+            <p className='events-para-two'>Enjoy your day!</p>
           </div>
         </div>
       </div>
