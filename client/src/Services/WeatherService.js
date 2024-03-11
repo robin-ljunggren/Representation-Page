@@ -6,14 +6,10 @@ async function fetchWeather() {
 
   const localeGeo = await GetLocale.getLocaleGeo();
 
-  console.log(localeGeo);
-
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${localeGeo.lat}&lon=${localeGeo.lon}&appid=${apiKey}&units=metric`;
   const response = await fetch(url);
 
   const data = await response.json();
-
-  console.log("data = ", data)
 
   const weather = {
     temp: data.main.temp,
@@ -25,6 +21,7 @@ async function fetchWeather() {
     weatherId: data.weather[0].id,
     weatherImgSrc: '',
   }
+  
   return weather;
 }
 
