@@ -38,11 +38,20 @@ export default function CalendarWidget() {
   const weekdays = localeLangCode === 'sv-SE' ? datesOfLanguage.sweDays : datesOfLanguage.engDays;
   const months = localeLangCode === 'sv-SE' ? datesOfLanguage.sweMonths : datesOfLanguage.engMonths;
 
+  const eventTexts = {
+    noEventsEng: "No events",
+    enjoyEng: "Enjoy your day!",
+    noEventsSwe: "Inga händelser",
+    enjoySwe: "Njut av dagen!",
+  }
+
   // const handleMonthChange = (offset) => {
   //   const newDate = new Date(selectedDate);
   //   newDate.setMonth(selectedDate.getMonth() + offset);
   //   setSelectedDate(newDate);
   // };
+
+  
 
   return (
     <div className='widget-container'>
@@ -60,8 +69,8 @@ export default function CalendarWidget() {
             )}
           </div>
           <div className='scheduled-events-container'>
-            <p className='events-para-one'>No events</p>
-            <p className='events-para-two'>Enjoy your day!</p>
+            <p className='events-para-one'>{localeLangCode === "sv-SE" ? eventTexts.noEventsSwe : eventTexts.noEventsEng}</p>
+            <p className='events-para-two'>{localeLangCode === "sv-SE" ? eventTexts.enjoySwe : eventTexts.enjoyEng}</p>
           </div>
         </div>
       </div>
