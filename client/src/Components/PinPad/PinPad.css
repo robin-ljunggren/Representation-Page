@@ -50,7 +50,13 @@
   margin-left: -2em;
   margin-top: 0.5em;
 }
-.pin-pad-form button {
+
+.btn-container {
+  position: absolute;
+  margin-top: 3.85em;
+}
+.pin-btn,
+.pin-btn-pressed {
   background-color: rgba(238, 238, 238, 0.199);
   border: none;
   padding: 0.6em 1em;
@@ -61,24 +67,31 @@
   margin: 0 0.5em 0.5em 0.5em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.pin-pad-form button:nth-child(10),
-.pin-pad-form button:nth-child(10) img {
+.pin-btn:nth-child(10),
+.pin-btn-pressed:nth-child(10) {
+  width: 2.5em;
+  height: 2.5em;
+  background: none;
+}
+.pin-btn:nth-child(10) img,
+.pin-btn-pressed:nth-child(10) img {
+  margin-left: -0.25em;
   width: 25px;
   height: 14px;
-  background: none;
 }
-.pin-pad-form button:nth-child(12) {
+.pin-btn:nth-child(12) {
   background: none;
   font-size: 1.4rem;
-  color: rgb(194, 194, 194);
-  margin-left: -0.08em;
+  color: rgba(243, 243, 243, 0.473);
 }
-.pin-pad-form button:nth-child(11) {
-  margin-left: 1em;
+.pin-btn-pressed:nth-child(12) {
+  background: none;
+  font-size: 1.4rem;
+  color: rgb(243, 243, 243);  
 }
-.btn-container {
-  position: absolute;
-  margin-top: 3.85em;
+.pin-btn:active,
+.pin-btn:active:nth-child(10) img {
+  background-color: rgba(255, 255, 255, 0.507);
 }
 .wrong-pin {
   animation: shaking 0.20s forwards;

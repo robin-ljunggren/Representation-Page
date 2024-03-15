@@ -132,7 +132,7 @@ export default function PinPad(props) {
     setTimeout(() => {
       setHideValue(true);
       setSecretVal([...secretVal, <span className='secret-val' key={secretVal}></span>])
-    }, 350);
+    }, 200);
   }
 
   function removeDigits() {
@@ -153,7 +153,7 @@ export default function PinPad(props) {
             <p className='pin-code'>{hideValue ? "" : pinCode}</p>
           </div>
         )}
-        <div className={btnsClassRef.current} >{pinPadProps.map(button => <button key={crypto.randomUUID()} disabled={disabled} onClick={handleClick}>{button}</button>)}</div>
+        <div className={btnsClassRef.current} >{pinPadProps.map(button => <button key={crypto.randomUUID()} className={ secretVal.length ? 'pin-btn-pressed' : 'pin-btn' } disabled={disabled} onClick={handleClick}>{button}</button>)}</div>
       </form>
     
   )
