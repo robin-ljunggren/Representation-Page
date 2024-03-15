@@ -41,7 +41,7 @@ export default function WeatherWidget() {
       <aside className='weather-widget'>
         <div className='icon-temp-container'>
           <img className='weather-icon' alt='icon showing current weather' src={weatherImg} />
-          <p className='weather-temp'>{weather.current ? weather.current.temp.toString().slice(0, 2) : "20"}{'°'}</p>
+          <p className='weather-temp'>{weather.current ? weather.current.temp.toString().slice(0, 1) : "20"}{'°'}</p>
         </div>
         <div className='para-container'>
           <p className='locale-time'>{weather.current ? weather.current.weather : "Sunny"}</p>
