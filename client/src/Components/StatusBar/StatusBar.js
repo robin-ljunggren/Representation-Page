@@ -26,12 +26,10 @@ export default function StatusBar(props) {
 
   useEffect(() => {
     const randomTime = Math.floor(Math.random() * 55000) + 5000;
-    console.log(randomTime);
 
     setTimeout(() => {
 
       dynamics.shiftImgSrc(prevRandomNum.current, setWifiImgSrcState);
-      console.log("SetTimeout");
     }, randomTime)
   }, [wifiImgSrcState])
   
