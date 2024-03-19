@@ -7,8 +7,6 @@ import '../HomeButtons/HomeButtons.css';
 
 export default function HomeButtons() {
 
-  
-
   return (
     <>
       <div className='home-btns-container'>
