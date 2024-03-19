@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import dynamics from '../../../Dynamics/dynamics';
 import Sunny from '../../../img/weather-sunny.png';
 import RefreshArrow from '../../../img/refresh-arrow.png';
+import GetLocale from '../../../Services/GetLocale';
 import './WeatherWidget.css';
 
 
@@ -10,6 +11,8 @@ export default function WeatherWidget() {
   const [weatherImg, setWeatherImg] = useState(Sunny);
   const [updateWeather, setUpdateWeather] = useState(true);
   const [useEffectUpdater, setUseEffectUpdater] = useState(false);
+
+  const localeLangCode = GetLocale.getLocaleLang();
 
   function weatherUpdater() {
     setUpdateWeather(true);
@@ -34,7 +37,10 @@ export default function WeatherWidget() {
     getWeather();
   }, [useEffectUpdater]);
 
-  // weather.current.location = "lång textsträng hmm"
+  const fallbackWeather = {
+    type: localeLangCode === "sv-SE" ? "Soligt" : "Sunny",
+    location: localeLangCode === "sv-SE" ? "Kan inte hitta plats" : "Can not find location",
+  };
 
   return (
     <div className='widgets-container'>
@@ -44,9 +50,9 @@ export default function WeatherWidget() {
           <p className='weather-temp'>{weather.current ? weather.current.temp.toString().slice(0, 1) : "20"}{'°'}</p>
         </div>
         <div className='para-container'>
-          <p className='locale-time'>{weather.current ? weather.current.weather : "Sunny"}</p>
+          <p className='weather-type'>{weather.current ? weather.current.weather : fallbackWeather.type}</p>
           <div className='location-arrow-container'>
-            <p className='weather-location'>{weather.current ? weather.current.location : ""}</p>
+            <p className='weather-location'>{weather.current ? weather.current.location : fallbackWeather.location}</p>
             <img className={updateWeather ? 'refresh-arrow-active' : 'refresh-arrow'} alt="refresh weather button" src={RefreshArrow} onClick={weatherUpdater}/>
           </div>
         </div>
