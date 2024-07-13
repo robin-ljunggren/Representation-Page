@@ -1,0 +1,79 @@
+.widgets-container {
+  display: flex;
+  justify-content: center;
+}
+
+.weather-widget {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8em;
+}
+
+.icon-temp-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 7em;
+}
+
+.para-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.location-arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.weather-icon {
+  width: 3.1em;
+}
+
+.weather-temp,
+.weather-location,
+.weather-type {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+}
+
+.weather-location {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.weather-type {
+  margin-top: 0.3em;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.refresh-arrow {
+  width: 0.7em;
+}
+
+.refresh-arrow-active {
+  width: 0.7em;
+  animation: rotate 2s ease-in infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(359deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+/*# sourceMappingURL=WeatherWidget.css.map */

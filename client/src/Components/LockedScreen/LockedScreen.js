@@ -3,7 +3,7 @@ import PhoneIcon from '../../img/lock-screen-phone.png';
 import LockIcon from '../../img/lock-icon.png';
 import CameraIcon from '../../img/lock-screen-camera.png';
 import GetLocale from '../../Services/GetLocale.js';
-import './LockedScreen.css';
+import './LockedScreen.scss';
 
 
 export default function LockedScreen(props) {

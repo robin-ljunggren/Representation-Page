@@ -2,7 +2,7 @@ import React from 'react';
 import BackArrow from '../../img/back-arrow.png';
 import HomeButton from '../../img/home-button.png';
 import PrevAppsButton from '../../img/last-apps.png';
-import '../HomeButtons/HomeButtons.css';
+import '../HomeButtons/HomeButtons.scss';
 
 
 export default function HomeButtons() {

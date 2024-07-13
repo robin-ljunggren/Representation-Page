@@ -1,5 +1,5 @@
 import React, { useReducer, useRef, useState } from 'react'
-import './PinPad.css';
+import './PinPad.scss';
 import EraseLeft from '../../img/erase-left.png';
 import GetLocale from '../../Services/GetLocale';
 

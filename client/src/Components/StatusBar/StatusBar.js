@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import './StatusBar.css';
+import './StatusBar.scss';
 import { extractUserAgent } from '../../Services/UserAgent.js';
 import chatIcon from '../../img/chat-icon.png';
 import powerSavingMode from '../../img/power-saving-mode.png';

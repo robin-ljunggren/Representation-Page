@@ -1,6 +1,6 @@
 import React from 'react';
 import GetLocale from '../../../Services/GetLocale';
-import './CalendarWidget.css';
+import './CalendarWidget.scss';
 
 export default function CalendarWidget() {
   

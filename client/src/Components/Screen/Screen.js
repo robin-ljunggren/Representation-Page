@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Screen.css';
+import './Screen.scss';
 import LockIcon from '../../img/lock-icon.png';
 import BackArrow from '../../img/back-arrow.png';
 import GetLocale from '../../Services/GetLocale.js';

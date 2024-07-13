@@ -3,7 +3,7 @@ import dynamics from '../../../Dynamics/dynamics';
 import Sunny from '../../../img/weather-sunny.png';
 import RefreshArrow from '../../../img/refresh-arrow.png';
 import GetLocale from '../../../Services/GetLocale';
-import './WeatherWidget.css';
+import './WeatherWidget.scss';
 
 
 export default function WeatherWidget() {

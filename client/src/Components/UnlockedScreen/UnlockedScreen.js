@@ -1,5 +1,5 @@
 import React from 'react';
-import './UnlockedScreen.css';
+import './UnlockedScreen.scss';
 import HomeButtons from '../HomeButtons/HomeButtons';
 import HomeScreen from '../HomeScreen/HomeScreen';
 

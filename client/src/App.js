@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import './App.css';
+import './App.scss';
 import StatusBar from './Components/StatusBar/StatusBar.js';
 import Screen from './Components/Screen/Screen.js';
 

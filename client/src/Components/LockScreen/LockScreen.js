@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './LockScreen.css';
+import './LockScreen.scss';
 import LockIcon from '../../img/lock-icon.png';
 import PhoneIcon from '../../img/lock-screen-phone.png';
 import CameraIcon from '../../img/lock-screen-camera.png';
